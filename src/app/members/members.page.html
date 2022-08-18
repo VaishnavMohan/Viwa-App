@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Members List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-header>
+  <ion-toolbar class="ios hydrated">
+    <ion-title class="ios title-ios hydrated">Add</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list lines="full">
+    <form [formGroup]="bookingForm" (ngSubmit)="formSubmit()">
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input formControlName="name" type="text" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input formControlName="email" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Mobile</ion-label>
+        <ion-input formControlName="mobile" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Subscribed ?</ion-label>
+        <ion-input formControlName="bool" placeholder="Yes or No" type="text" required>
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="">Subscribed Date</ion-label>
+        <ion-input formControlName="date" type="Date">
+        </ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button type="submit" color="primary" shape="full" expand="block">Add Member</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-list>
+</ion-content>
+
+<ion-content>
+  <ion-app>
+    <ion-router-outlet></ion-router-outlet>
+  </ion-app>
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button routerLinkActive="tab-selected" routerLink="/memberlist" class="ios" tab="home">
+        <ion-icon name="list-box"></ion-icon>
+        <ion-label>View Members</ion-label>
+      </ion-tab-button>
+      <ion-tab-button routerLinkActive="tab-selected" routerLink="/members" class="ios" tab="make-appointment">
+        <ion-icon name="add-circle"></ion-icon>
+        <ion-label>Add Member</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

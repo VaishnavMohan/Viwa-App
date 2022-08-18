@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    
+    <ion-buttons slot="start">
+     
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Dashboard</ion-title>
+    
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <!-- <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        Welcome to Dashboard!
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        Your Registered EmailID : {{userEmail}}
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+<ion-grid>
+  <ion-row>
+    <ion-col size="12">
+      <!-- <ion-icon name="person"></ion-icon> -->
+      <ion-text>
+        <h1>Admin Panel</h1>
+      </ion-text>
+    </ion-col>
+    <ion-col size="7" [routerLink]="['/member2']">
+      <ion-card>
+      <ion-icon name="people">
+        </ion-icon>
+        <ion-text>
+          <h3>Members</h3>
+          <h4>
+            {{members.length}}
+          </h4>
+        </ion-text>
+      </ion-card>
+    </ion-col>
+    <!-- <ion-col size="6">
+      <ion-icon name="people">
+        </ion-icon>
+        <ion-text>
+          <h2>Members</h2>
+        </ion-text>
+    </ion-col> -->
+  </ion-row>
+</ion-grid>
+</ion-content>
+<!-- <ion-footer (click)="logout()">
+  <ion-toolbar color="secondary">
+    <ion-title>Log out</ion-title>
+  </ion-toolbar>
+</ion-footer> -->
