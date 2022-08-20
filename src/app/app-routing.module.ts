@@ -51,6 +51,10 @@ const routes: Routes = [
     path: 'member2',
     loadChildren: () => import('./member2/member2.module').then( m => m.Member2PageModule)
   },
+  {
+    path: 'eventmodal',
+    loadChildren: () => import('./eventmodal/eventmodal.module').then( m => m.EventmodalPageModule)
+  },
 ];
 
 @NgModule({
