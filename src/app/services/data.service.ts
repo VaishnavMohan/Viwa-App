@@ -7,11 +7,13 @@ import { Observable } from 'rxjs';
 export class memberlist{
   [prop: string]: any;
   id?: string;
+  memberId?: number;
   name?: string;
-  mobile?: string;
+  Qid?: string;
   email?: string;
   // subscription: string;
   date?: Date;
+  status?: string;
 }
 
 export class eventlist{
@@ -51,7 +53,7 @@ export class DataService {
 
   updateMember(member: memberlist){
     const memberDocRef = doc(this.firestore, `members/${member.id}`);
-    return updateDoc(memberDocRef, {id:member.id, name: member.name, date: member.date});
+    return updateDoc(memberDocRef, {id:member.id, name: member.name, date: member.date, Qid: member.Qid, status: member.status});
   }
 
 

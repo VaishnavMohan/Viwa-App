@@ -28,7 +28,7 @@ const modal = await this.modalCtrl.create({
   component: ModalPage,
   componentProps:{ id: member.id},
   breakpoints: [0,0.5,0.8],
-  initialBreakpoint: 0.7
+  initialBreakpoint: 0.8
 });
 modal.present();
 }
@@ -38,13 +38,18 @@ async addMember(){
     header: 'Add Member',
     inputs: [
       {
+        name: 'memberid',
+        placeholder: 'Add Member Id',
+        type: 'number'
+      },
+      {
         name: 'name',
         placeholder: 'Add Member Name',
         type: 'text'
       },
       {
-        name: 'mobile',
-        placeholder: 'Mobile Number',
+        name: 'Qid',
+        placeholder: 'Qid Number',
         type: 'text'
       },
       {
@@ -59,9 +64,15 @@ async addMember(){
       // },
       {
         name: 'date',
-        placeholder: 'Add Subscribed Date',
+        placeholder: 'Date of Join',
         type: 'date'
       },
+      {
+        name: 'status',
+        placeholder: 'Active or Inactive',
+        type: 'text'
+      },
+      
     ],
     buttons:[
       {
@@ -72,11 +83,13 @@ async addMember(){
         text: 'Add',
         handler: (res) => {
           this.dataService.addMember({
+            memberid: res.memberid,
             name: res.name, 
-            mobile: res.mobile,
+            Qid: res.Qid,
             email: res.email,
             // subscription: res.subsciption,
-            date: res.date
+            date: res.date,
+            status: res.status,
           })
         }
       }
