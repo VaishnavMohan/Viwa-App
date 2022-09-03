@@ -34,6 +34,7 @@ modal.present();
 }
 
 async addMember(){
+  
   const alert = await this.alertCtrl.create({
     header: 'Add Member',
     inputs: [
@@ -45,6 +46,11 @@ async addMember(){
       {
         name: 'name',
         placeholder: 'Add Member Name',
+        type: 'text'
+      },
+      {
+        name: 'Fname',
+        placeholder: 'Enter Fathers name',
         type: 'text'
       },
       {
@@ -72,7 +78,41 @@ async addMember(){
         placeholder: 'Active or Inactive',
         type: 'text'
       },
-      
+      {
+        name: 'Pnumber',
+        placeholder: 'Passport Number',
+        type: 'text'
+      },
+      {
+        name: 'work',
+        placeholder: 'Working place',
+        type: 'text'
+      },
+      {
+        name: 'Qadress',
+        placeholder: 'Enter Qatar Address',
+        type: 'text'
+      },
+      {
+        name: 'Hadress',
+        placeholder: 'Enter native adress',
+        type: 'text'
+      },
+      {
+        name: 'Rname',
+        placeholder: 'Enter Relative Name',
+        type: 'text'
+      },
+      {
+        name: 'Rphone',
+        placeholder: 'Enter Relative number',
+        type: 'text'
+      },
+      {
+        name: 'Bgroup',
+        placeholder: 'Blood Group',
+        type: 'text'
+      },
     ],
     buttons:[
       {
@@ -85,11 +125,19 @@ async addMember(){
           this.dataService.addMember({
             memberid: res.memberid,
             name: res.name, 
+            Fname: res.Fname,
             Qid: res.Qid,
             email: res.email,
             // subscription: res.subsciption,
             date: res.date,
             status: res.status,
+            Pnumber: res.Pnumber,
+            work: res.work,
+            Qadress: res.Qadress,
+            Hadress: res.Hadress,
+            Rname: res.Rname,
+            Rphone: res.Rphone,
+            Bgroup: res.Bgroup
           })
         }
       }

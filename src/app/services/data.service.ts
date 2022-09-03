@@ -9,11 +9,19 @@ export class memberlist{
   id?: string;
   memberId?: number;
   name?: string;
+  Fname?: string;
   Qid?: string;
   email?: string;
   // subscription: string;
   date?: Date;
   status?: string;
+  Pnumber?: string;
+  work?: string;
+  Qadress?: string;
+  Hadress?: string;
+  Rname?: string;
+  Rphone?: string;
+  Bgroup?: string;
 }
 
 export class eventlist{
